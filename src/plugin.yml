@@ -1,0 +1,66 @@
+name: KonseptGate
+main: com.webkonsept.bukkit.konseptgate.KG
+version: 0.6.2
+api-version: '1.21'
+description: Simplified/stripped-down teleport/gating plugin
+commands:
+    kg:
+        description: Takes the selected action against the indicated gate(s)
+        usage: /kg [create|command|move|delete|link|jump|ignore|reload|list] <gate(s)> <options>
+authors: [DemmyDemon]
+contributors:
+    - Original concept and code by DemmyDemon (Fredrik Vold)
+    - Paper 1.21.1 adaptation by Claude Code (Anthropic)
+softdepend: [MultiVerse,Multiverse-Core,MyWorlds,emericaWorlds,WormholeExtreme,WorldGuard]
+permissions:
+    konseptgate.*:
+        description: Gives full access
+        children:
+            konseptgate.command.*: true
+            konseptgate.teleport: true
+            konseptgate.info: true
+    konseptgate.command.*:
+        description: Gives access to all commands
+        children:
+            konseptgate.command.link: true
+            konseptgate.command.create: true
+            konseptgate.command.move: true
+            konseptgate.command.delete: true
+            konseptgate.command.list: true
+            konseptgate.command.reload: true
+            konseptgate.command.jump: true
+            konseptgate.command.ignore: true
+            konseptgate.command.command: true
+    konseptgate.command.link:
+        description: Gives access to the /kg link command
+        default: op
+    konseptgate.command.create:
+        description: Gives access to the /kg create command
+        default: op
+    konseptgate.command.move:
+        description: Gives access to the /kg move command
+        default: op
+    konseptgate.command.delete:
+        description: Gives access to the /kg delete command
+        default: op
+    konseptgate.command.list:
+        description: Gives access to the /kg list command
+        default: op
+    konseptgate.command.reload:
+        description: Gives access to the /kg reload command
+        default: op
+    konseptgate.command.jump:
+        description: Gives access to the /kg jump command
+        default: op
+    konseptgate.command.ignore:
+        description: Gives access to the /kg ignore command
+        default: op
+    konseptgate.command.command:
+        description: Gives access to the /kg command command
+        default: op
+    konseptgate.teleport:
+        description: The business end of this plugin
+        default: true
+    konseptgate.info:
+        description: Right-click a telepad for info
+        defauilt: op

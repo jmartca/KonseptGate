@@ -1,0 +1,7 @@
+verbose: false
+underblock: NETHER_BRICKS
+defaultTarget: ''
+defaultCommand: ''
+fireEffect: true
+missingDestinationMessage: true
+gatesPerPage: 9
